@@ -1,11 +1,13 @@
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useEffect} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {List} from '../../components/List';
 import {useFavoris} from './useFavoris';
 
 export const Favoris: FunctionComponent = () => {
-  const {characters} = useFavoris();
-  console.log('PageFavoris', characters);
+  const {characters, retrieveData} = useFavoris();
+  useEffect(() => {
+    retrieveData();
+  });
   return (
     <View style={styles.container}>
       <View style={styles.containerList}>

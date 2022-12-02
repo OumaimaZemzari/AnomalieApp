@@ -27,7 +27,7 @@ export const ListItem: FunctionComponent<Props> = ({item, isFavoris}) => {
   const Add = () => {
     if (isFavoris) {
       console.log('favoris');
-      removeData();
+      removeData(item);
     } else {
       // eslint-disable-next-line no-sparse-arrays
       Alert.alert('Ajout', 'Vous voulez ajouter: ' + item.name, [
